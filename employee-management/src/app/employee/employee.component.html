@@ -1,0 +1,218 @@
+<h2>{{ title }}</h2>
+<!-- Rest of the code... -->
+<form #employeeForm="ngForm" (ngSubmit)="addEmployee()" novalidate>
+  <table>
+    <tbody>
+      <tr>
+        <th><label for="id">ID: *</label></th>
+        <td><input type="number" id="id" name="id" [(ngModel)]="employee.id" required autocomplete="off"></td>
+
+      </tr>
+
+      <tr>
+        <th><label for="name">Employee Name: *</label></th>
+        <td><input type="text" id="name" name="name"[(ngModel)]="employee.EmpName" required  autocomplete="name" minlength="3" maxlength="15"></td>
+      </tr>
+
+      <tr>
+        <th><label for="address">Employee Address: *</label></th>
+        <td><textarea id="address" name="address" [(ngModel)]="employee.empAddress" required autocomplete="on" minlength="5" maxlength="250"></textarea></td>
+      </tr>
+
+      <tr>
+        <th><label for="sex">Sex: *</label></th>
+        <td>
+          <select id="sex" name="sex"[(ngModel)]="employee.sex" required autocomplete="on">
+            <option value="">-- Select Gender --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </td>
+      </tr>
+
+
+      <tr>
+        <th><label for="maritalStatus">Marital Status: *</label></th>
+        <td>
+          <label>
+            <input type="radio" id="maritalStatus" name="maritalStatus" [(ngModel)]="employee.marriedStatus" value="married" required autocomplete="on">
+            Married
+          </label>
+          <label>
+            <input type="radio" id="maritalStatus"name="maritalStatus" [(ngModel)]="employee.marriedStatus" value="unmarried" required autocomplete="on">
+            Unmarried
+          </label>
+        </td>
+      </tr>
+
+      
+      <tr>
+        <th><label for="WorkingStatus">Working Status: *</label></th>
+        <td>
+          <select id="WorkingStatus" name="WorkingStatus"[(ngModel)]="employee.working" required autocomplete="on">
+            <option value="Working">Yes</option>
+            <option value="Not Working">No</option>
+          </select>
+        </td>
+      </tr>
+
+     
+      <tr>
+        <th><label for="mobileNo">Mobile No: *</label></th>
+        <td><input type="text" id="mobileNo" name="mobileNo" [(ngModel)]="employee.empMobile" required pattern="[0-9]{10}" autocomplete="on"></td>
+      </tr>
+
+      <tr>
+        <th><label for="EmpSal">Emp Salary(in LPA): *</label></th>
+        <td><input type="text" id="Sal" name="Sal" [(ngModel)]="employee.empsalary" autocomplete="on"></td>
+      </tr>
+
+      <tr>
+        <th><label for="Dept">Department: *</label></th>
+        <td>
+          <select id="Dept" name="Dept"[(ngModel)]="employee.department" required autocomplete="on">
+            <option value="">-- Select Department--</option>
+            <option value="Hr">Hr</option>
+            <option value="Sales">Sales</option>
+            <option value="Finanace">Finanace</option>
+            <option value="technical Support">technical Support</option>
+            <option value="Development">Development</option>
+            <option value="Testing">Testing</option>
+
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <th><label for="email">Email ID: *</label></th>
+        <td><input type="email" id="email" name="email" [(ngModel)]="employee.email" required  autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"></td>
+      </tr>
+
+      
+
+      <tr>
+        <td colspan="3">
+          <button type="submit" >Submit</button>
+        </td>
+      </tr>
+
+
+    
+    </tbody>
+  </table>
+</form>
+
+<button (click)="navigateToPage()">Next Page</button>
+<router-outlet></router-outlet>
+
+<h2>Employee Dashboard</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Emp ID</th>
+      <th>Employee Name</th>
+      <th>Employee Address</th>
+      <th>Sex</th>
+      <th>Marital Status</th>
+      <th>Working Status</th>
+      <th>Emp Moible</th>
+      <th>Emp Salary</th>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let emp of employees">
+
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.id }}</span>
+        <input *ngIf="emp.isEditing" type="number" [(ngModel)]="emp.id" required>
+      </td>
+     
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.empName }}</span>
+        <input *ngIf="emp.isEditing" type="text" [(ngModel)]="emp.EmpName" required minlength="3" maxlength="100" >
+      </td>
+
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.empAddress }}</span>
+        <textarea *ngIf="emp.isEditing" [(ngModel)]="emp.empAddress" required minlength="5" maxlength="250"></textarea>
+      </td>
+
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.sex }}</span>
+        <select *ngIf="emp.isEditing" [(ngModel)]="emp.sex" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </td>
+      
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.marriedStatus }}</span>
+        <label *ngIf="emp.isEditing">
+          <input type="radio" [(ngModel)]="emp.marriedStatus" value="married" required>
+          Married
+        </label>
+        <label *ngIf="emp.isEditing">
+          <input type="radio" [(ngModel)]="emp.marriedStatus" value="unmarried" required>
+          Unmarried
+        </label>
+      </td>
+
+      
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.working }}</span>
+        <select *ngIf="emp.isEditing" [(ngModel)]="emp.working" required>
+          <option value="Yes">Yes</option>
+          <option value="NO">No</option>
+        </select>
+      </td>
+
+      
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.empMobile }}</span>
+        <input *ngIf="emp.isEditing" type="text" [(ngModel)]="emp.empMobile" required pattern="[0-9]{10}">
+      </td>
+
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.empsalary }}</span>
+        <input *ngIf="emp.isEditing" type="text" [(ngModel)]="emp.empsalary" >
+      </td>
+
+
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.department }}</span>
+        <select *ngIf="emp.isEditing" [(ngModel)]="emp.department" required>
+          <option value="Hr">Hr</option>
+          <option value="Sales">Sales</option>
+          <option value="Marketing">Marketing</option>
+          <option value="technical Support">technical Support</option>
+          <option value="Development">Development</option>
+          <option value="Testing">Testing</option>
+
+        </select>
+      </td>
+      <td>
+        <span *ngIf="!emp.isEditing">{{ emp.email }}</span>
+        <input *ngIf="emp.isEditing" type="email" [(ngModel)]="emp.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+      </td>
+      
+      
+      <td>
+        <button *ngIf="!emp.isEditing" (click)="editEmployee(emp)">Edit</button>
+        <button *ngIf="emp.isEditing" (click)="updateEmployee(emp)">Save</button>
+        <button *ngIf="emp.isEditing" (click)="cancelUpdate(emp)">Cancel</button>
+        <button (click)="deleteEmployee(emp)">Delete</button>
+      </td>
+    </tr>
+
+
+
+    
+  </tbody>
+</table>
+
