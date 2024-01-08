@@ -17,15 +17,15 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EmpolyeeManagement_system
 build_property.RootNamespace = EmpolyeeManagement_system
-build_property.ProjectDir = C:\demo\API\EmpolyeeManagement system\
+build_property.ProjectDir = C:\Users\KIRAN\source\repos\Curdopration\emp project\API\EmpolyeeManagement system\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\demo\API\EmpolyeeManagement system
+build_property.MSBuildProjectDirectory = C:\Users\KIRAN\source\repos\Curdopration\emp project\API\EmpolyeeManagement system
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/demo/API/EmpolyeeManagement system/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/KIRAN/source/repos/Curdopration/emp project/API/EmpolyeeManagement system/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

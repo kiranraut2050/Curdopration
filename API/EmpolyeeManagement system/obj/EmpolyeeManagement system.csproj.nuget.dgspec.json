@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\demo\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj": {}
+    "C:\\Users\\KIRAN\\source\\repos\\Curdopration\\emp project\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj": {}
   },
   "projects": {
-    "C:\\demo\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj": {
+    "C:\\Users\\KIRAN\\source\\repos\\Curdopration\\emp project\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\demo\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj",
+        "projectUniqueName": "C:\\Users\\KIRAN\\source\\repos\\Curdopration\\emp project\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj",
         "projectName": "EmpolyeeManagement system",
-        "projectPath": "C:\\demo\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj",
-        "packagesPath": "C:\\Users\\pawar\\.nuget\\packages\\",
-        "outputPath": "C:\\demo\\API\\EmpolyeeManagement system\\obj\\",
+        "projectPath": "C:\\Users\\KIRAN\\source\\repos\\Curdopration\\emp project\\API\\EmpolyeeManagement system\\EmpolyeeManagement system.csproj",
+        "packagesPath": "C:\\Users\\KIRAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KIRAN\\source\\repos\\Curdopration\\emp project\\API\\EmpolyeeManagement system\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pawar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KIRAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

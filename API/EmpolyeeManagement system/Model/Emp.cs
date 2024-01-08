@@ -4,9 +4,11 @@ namespace EmpolyeeManagement_system.Model
 {
     public class Emp
     {
+        [Key]
         public int Id { get; set; }
        
         [Required]
+       
         public string EmpName { get; set; }
         [Required]
         public string EmpMobile { get; set; }
